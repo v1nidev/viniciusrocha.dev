@@ -1,16 +1,51 @@
 {
   "name": "viniciusrocha.dev",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "start": "run-p dev:*",
+    "dev:11ty": "npx @11ty/eleventy --serve",
+    "dev:css": "postcss src/css/index.css --dir dist/css --watch",
+    "_dev:css": "parcel watch src/css/index.scss --dist-dir dist/css --no-content-hash",
+    "build": "run-p clean prod:*",
+    "prod:11ty": "cross-env NODE_ENV=production npx @11ty/eleventy",
+    "prod:css": "cross-env NODE_ENV=production postcss src/css/index.css --dir dist/css",
+    "_dprod:css": "parcel build src/css/* --dist-dir dist/css",
+    "clean": "rimraf dist/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
-  }
+    "tailwindcss": "^2.2.17"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.3.7",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.8",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.0.0",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1",
+    "postcss-import": "^14.0.2",
+    "rimraf": "^2.7.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all",
+      "not IE 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "author": "Vinicius Rocha <vinirocha.dev@gmail.com> (http://viniciusrocha.dev/)",
+  "description": "",
+  "keywords": [
+    "11ty",
+    "Tailwindcss",
+    "eleventy",
+    "PurgeCSS"
+  ]
 }

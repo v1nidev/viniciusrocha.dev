@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Antikor Text';
+  src: local('Antikor Text Light'), local('Antikor-Text-Light'),
+      url('../fonts/AntikorText-Light/AntikorText-Light.woff2') format('woff2'),
+      url('../fonts/AntikorText-Light/AntikorText-Light.woff') format('woff'),
+      url('../fonts/AntikorText-Light/AntikorText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Antikor Text';
+  src: local('Antikor Text Medium'), local('Antikor-Text-Medium'),
+      url('../fonts/AntikorText-Medium/AntikorText-Medium.woff2') format('woff2'),
+      url('../fonts/AntikorText-Medium/AntikorText-Medium.woff') format('woff'),
+      url('../fonts/AntikorText-Medium/AntikorText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Antikor Text';
+  src: local('Antikor Text Bold'), local('Antikor-Text-Bold'),
+      url('../fonts/AntikorText-Bold/AntikorText-Bold.woff2') format('woff2'),
+      url('../fonts/AntikorText-Bold/AntikorText-Bold.woff') format('woff'),
+      url('../fonts/AntikorText-Bold/AntikorText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  font-family: 'Antikor Text';
+}
+
+body {
+  background: black;
+  background-image:
+    linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),
+    url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCI+CjxmaWx0ZXIgaWQ9Im4iIHg9IjAiIHk9IjAiPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC43IiBudW1PY3RhdmVzPSIxMCIgc3RpdGNoVGlsZXM9InN0aXRjaCI+PC9mZVR1cmJ1bGVuY2U+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzAwMCI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjQiPjwvcmVjdD4KPC9zdmc+");
+  color: white;
+}
