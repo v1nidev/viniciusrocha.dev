@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: {
     content: [
@@ -11,6 +13,19 @@ module.exports = {
   theme: {
     screens: getScreenSettings(),
     fontSize: getFontSizeSettings(),
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.trueGray,
+      green: {
+        200: '#E3F3A1',
+        500: '#CDE56B',
+        800: '#BFE429',
+      }
+    }
+  },
   variants: {},
   plugins: [],
 };
