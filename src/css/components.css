@@ -1,0 +1,10 @@
+@layer components {
+  .home-header {
+    max-height: 420px;
+  }
+  @media screen(sm) {
+    .home-header {
+      max-height: initial;
+    }
+  }
+}
