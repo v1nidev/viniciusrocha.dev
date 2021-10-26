@@ -6,3 +6,40 @@ publish_mode: editorial_workflow
 
 media_folder: "src/img/uploads"
 public_folder: "/img/uploads" # The src attribute for uploaded media will begin with /img/uploads
+
+collections:
+  - label: "Shared"
+    name: "shared"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "contact"
+        label: "Contact"
+        file: "src/_data/shared/contact.json"
+        fields:
+          - name: "email"
+            label: "Email"
+            widget: "string"
+          - name: "social"
+            label: "Social"
+            widget: "list"
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Link, name: link, widget: string}
+
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "src/_data/home.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Name, name: name, widget: markdown}
+          - {label: Description, name: description, widget: markdown}
+          - label: Status
+            name: status
+            widget: select
+            options: ["Available", "Unavailable"]
