@@ -10,6 +10,9 @@ Thumbs.db
 .cache
 .vscode
 
+# Bundler
+.parcel-cache
+
 # Node modules and output
 node_modules
 dist
