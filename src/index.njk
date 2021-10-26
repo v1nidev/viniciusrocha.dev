@@ -2,14 +2,28 @@
 title: Vinicius Rocha | Front-end web developer
 layout: base.njk
 ---
-<header>
-  <h1>Vinicius Rocha</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur iusto alias.</p>
-  <nav>
-    <ul>
-      <li>link</li>
-    </ul>
-  </nav>
+<header
+  class="home-header container mt-6 mx-auto px-4 md:px-0 grid grid-cols-12 content-center"
+  style="height:89vh;min-height:330px"
+>
+  <div class="col-start-2 col-end-10 lg:col-end-8 lg:col-end-6">
+    <h1 aria-label="Vinicius Rocha" class="text-6xl md:text-9xl font-bold leading-none tracking-wide text-gray-100">
+      VINI-<div> <span class="text-sm md:text-4xl">&nbsp;&nbsp;</span> CIUS</div>
+      ROCHA
+    </h1>
+  </div>
+  <div class="mt-3 lg:mt-6 col-start-2 col-end-12 sm:col-end-9 lg:col-end-7 xl:col-end-6">
+    {% p content.description %}
+  </div>
+
+  <button class="lg:hidden" aria-label="Open menu"></button>
+  <div class="hidden lg:block col-start-10 col-end-13">
+    <nav class="">
+      <ul>
+        <li>link</li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main>

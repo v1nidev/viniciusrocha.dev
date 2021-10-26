@@ -10,6 +10,15 @@ module.exports = function (eleventyConfig) {
     ghostMode: false
   })
   
+  eleventyConfig.addShortcode(
+    'p',
+    (content) => `
+    <p class="text-xs md:text-sm lg:text-base">
+      ${content}
+    </p>
+  `
+  );
+
   return {
     dir: {
       input: "src",
