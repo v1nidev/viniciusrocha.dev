@@ -5,7 +5,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
     ...eleventyConfig.browserSyncConfig,
     files: [
-      'dist/css/**/*.css'
+      'dist/css/**/*.css',
+      'dist/js/**/*.js',
     ],
     ghostMode: false
   })
