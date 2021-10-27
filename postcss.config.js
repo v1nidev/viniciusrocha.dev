@@ -4,6 +4,7 @@ const plugins = [
   require('postcss-import')({
     root: 'src/css/index.css'
   }),
+  require('tailwindcss/nesting'),
   require('tailwindcss')(`./tailwind.config.js`),
   isProd ? require('autoprefixer') : null,
   isProd ? require('cssnano')({
