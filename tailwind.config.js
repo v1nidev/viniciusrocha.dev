@@ -24,6 +24,23 @@ module.exports = {
         500: '#CDE56B',
         800: '#BFE429',
       }
+    },
+    extend: {
+      letterSpacing: {
+        wider: '.15em',
+        widest: '.3em',
+      },
+      rotate: {
+        '-35': '-35deg',
+      },
+      scale: {
+        '102': '1.02',
+        '225': '2.25',
+        '300': '3',
+      },
+      animation: {
+        'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+      }
     }
   },
   variants: {},
@@ -101,6 +118,7 @@ function getFontSizeSettings() {
   }
   
   return {
+    '2xs': clamp(-3.5),
     xs: clamp(-2.4),
     sm: clamp(-1),
     base: clamp(0),

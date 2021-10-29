@@ -4,28 +4,90 @@ eleventyComputed:
   title: "{{ home.title }}"
 ---
 <header
-  class="home-header container mt-6 mx-auto px-4 md:px-0 grid grid-cols-12 content-center"
+  class="home-header container mx-auto px-4 md:px-0 grid grid-cols-12"
   style="height:89vh;min-height:330px"
 >
-  <div class="col-start-2 col-end-10 lg:col-end-8 lg:col-end-6">
-    <h1 aria-label="Vinicius Rocha" class="text-6xl md:text-9xl font-bold leading-none tracking-wide text-gray-100">
+  <div class="
+    page-title-container md:mt-8 relative flex
+    col-start-2 col-end-10 lg:col-end-8 lg:col-end-6 self-end
+  ">
+    <h1
+      aria-label="Vinicius Rocha"
+      class="capsizedText text-6xl md:text-9xl font-bold leading-none tracking-wide text-gray-100"
+    >
       VINI-<div> <span class="text-sm md:text-4xl">&nbsp;&nbsp;</span> CIUS</div>
       ROCHA
     </h1>
+    <div class="header-indicator relative ml-7 md:ml-12 -my-2 md:-my-3 lg:-my-8 w-px bg-gray-500">
+      <div class="
+        pointer absolute flex items-center
+        left-full top-1/2 transform -translate-y-1/2
+      ">
+        <span class="relative flex mr-1 ml-3 lg:mr-2 lg:ml-3 h-2.5 w-2.5 justify-center items-center">
+          <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-800"></span>
+        </span>
+        <p class="mt-0.5 leading-none text-2xs md:text-xs text-gray-200">Available</p>
+      </div>
+    </div>
   </div>
-  <div class="mt-3 lg:mt-6 col-start-2 col-end-12 sm:col-end-9 lg:col-end-7 xl:col-end-6">
+  <div class="mt-6 md:mt-10 lg:mt-14 col-start-2 col-end-12 sm:col-end-9 lg:col-end-7 xl:col-end-6 self-start">
     {% p home.description %}
   </div>
 
-  <button class="lg:hidden" aria-label="Open menu"></button>
-  <div class="hidden lg:block col-start-10 col-end-13">
-    <nav class="">
-      <ul>
-        <li>link</li>
+  <div
+    id="menu-underlay"
+    class="
+      fixed top-0 right-0 w-96 h-96 lg:hidden
+      transform -rotate-35 translate-x-3/4 -translate-y-3/4 scale-x-102 scale-y-300
+      transition-transform duration-300 bg-green-200
+    "
+    style="will-change: transform"
+  >
+  </div>
+
+  <button id="menu-button" class="fixed top-0 right-0 lg:hidden w-14 h-16" aria-label="Open menu">
+    <svg class="ml-auto mr-3.5" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="2" y1="13" x2="17" y2="13" stroke="#232323" stroke-width="2"/>
+      <line x1="5" y1="7" x2="17" y2="7" stroke="#232323" stroke-width="2"/>
+      <line y1="1" x2="17" y2="1" stroke="#232323" stroke-width="2"/>
+    </svg>
+    <svg class="hidden ml-auto mr-3.5" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0.707107" y1="1.29289" x2="12.7279" y2="13.3137" stroke="black" stroke-width="2"/>
+      <line x1="0.802659" y1="13.3232" x2="12.8235" y2="1.30235" stroke="black" stroke-width="2"/>
+    </svg>
+  </button>
+
+  <div
+    id="menu"
+    class="
+      fixed top-24 right-10 lg:static lg:top-auto lg:right-auto lg:mt-16
+      flex flex-col
+      lg:col-start-10 lg:col-end-13 lg:row-start-1 lg:row-end-3
+      lg:bg-transparent text-gray-900
+      text-right
+      transition-opacity pointer-events-none opacity-0 lg:opacity-100 lg:pointer-events-auto
+    "
+  >
+    <nav class="
+      font-medium leading-10 text-sm tracking-wider text-gray-800 lg:text-white lg:leading-6 lg:tracking-widest
+    ">
+      <ul class="nav-link-list lg:inline-block">
+        <li class="mt-1"><a class="inline-block" href="#work">LATEST WORK</a></li>
+        <li class="mt-1"><a class="inline-block" href="#about">ABOUT</a></li>
+        <li class="mt-1 -mx-3 pt-1 px-3 text-gray-800 lg:bg-green-200"><a class="inline-block" href="#contact">CONTACT</a></li>
       </ul>
     </nav>
-    <address>
-      <a href="mailto:{{ shared.content.email }}">{{ shared.content.email }}</a><br>
+    <address class="hidden mt-auto lg:block">
+      <a class="inline-block -mx-3 pt-0.5 px-3 bg-gray-100" href="mailto:{{ shared.contact.email }}">{{ shared.contact.email }}</a><br>
+      <span class="mt-3 inline-block -mx-3 pt-0.5 px-3 bg-gray-100">
+        {%- for social in shared.contact.social -%}
+          {% if loop.index0 !== 0 %}
+            <span> / </span>
+          {% endif %}
+          <a href="{{ social.link }}">{{ social.name }}</a>
+        {%- endfor -%}
+      </span>
     </address>
   </div>
 </header>

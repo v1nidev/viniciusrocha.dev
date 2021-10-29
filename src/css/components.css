@@ -1,10 +1,45 @@
 @layer components {
   .home-header {
     max-height: 420px;
-  }
-  @media screen(sm) {
-    .home-header {
+    
+    @media screen(sm) {
       max-height: initial;
     }
+  }
+
+  .header-indicator {
+    &::before, &::after, .pointer::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: theme('colors.gray.500');
+    }
+    &::before, &::after {
+      position: absolute;
+      right: 0;
+      width: 0.75rem;
+    }
+    &::after {
+      bottom:0
+    }
+    .pointer::before {
+      width: 0.5rem;
+    }
+  }
+
+  .nav-link-list a {
+    margin-right: calc(-1 * theme('letterSpacing.widest'));
+  }
+
+  .capsizedText::before {
+    content: "";
+    margin-bottom: -0.017em;
+    display: table;
+  }
+
+  .capsizedText::after {
+    content: "";
+    margin-top: -0.248em;
+    display: table;
   }
 }

@@ -1,16 +1,16 @@
 {
-  "email": "",
+  "email": "vinirocha.dev@gmail.com",
   "social": [
     {
-      "name": "Twitter",
-      "link": "https://twitter.com/v1nidev"
+      "name": "github",
+      "link": "https://github.com/v1nidev"
     },
     {
-      "name": "GitHub",
-      "link": "https://twitter.com/v1nidev"
+      "name": "linkedin",
+      "link": "https://www.linkedin.com/in/vinirocha-dev/"
     },
     {
-      "name": "LinkedIn",
+      "name": "twitter",
       "link": "https://twitter.com/v1nidev"
     }
   ]
