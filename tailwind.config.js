@@ -6,6 +6,9 @@ module.exports = {
       "src/**/*.njk",
       "src/**/*.md"
     ],
+    safelist: [
+      'scale-x-225'
+    ],
     options: {
       whitelist: [],
     },

@@ -1,3 +1,3 @@
-import { toggleMenu } from "./menu";
+import { getMenuToggler } from "./menu";
 
-document.getElementById('menu-button').addEventListener('click', toggleMenu)
+document.getElementById('menu-button').addEventListener('click', getMenuToggler())
