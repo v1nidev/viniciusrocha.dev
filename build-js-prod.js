@@ -1,11 +1,11 @@
 const esbuild = require('esbuild');
 const browserslist = require('browserslist');
-const browserslistConfig = require('./package.json').browserslist;
+const browserslistProd = require('./package.json').browserslist.production;
 const { esbuildPluginBrowserslist, resolveToEsbuildTarget } = require('esbuild-plugin-browserslist');
 
 
 async function buildProd() {
-  const browserslistConfigString = browserslistConfig.production.join(', ')
+  const browserslistConfigString = browserslistProd.join(', ')
   const target = resolveToEsbuildTarget(browserslist(browserslistConfigString), {
     printUnknownTargets: false,
   });

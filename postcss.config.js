@@ -1,3 +1,6 @@
+const postcss = require('postcss')
+const doiuse = require('doiuse')
+const browserslistProd = require('./package.json').browserslist.production;
 const isProd = process.env.NODE_ENV === 'production'
 
 const plugins = [
@@ -6,6 +9,12 @@ const plugins = [
   }),
   require('tailwindcss/nesting'),
   require('tailwindcss')(`./tailwind.config.js`),
+  isProd ? doiuse({
+    browsers: browserslistProd,
+    onFeatureUsage: function (usageInfo) {
+      console.log(usageInfo.message)
+    }
+  }) : null,
   isProd ? require('autoprefixer') : null,
   isProd ? require('cssnano')({
     preset: ['default', {
