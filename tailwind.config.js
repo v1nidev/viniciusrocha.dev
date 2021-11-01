@@ -3,8 +3,9 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: {
     content: [
-      "src/**/*.njk",
-      "src/**/*.md"
+      // "src/**/*.njk",
+      // "src/**/*.md",
+      "dist/**/*.html",
     ],
     safelist: [
       'scale-x-225'
