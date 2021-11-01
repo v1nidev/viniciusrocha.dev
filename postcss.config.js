@@ -11,6 +11,7 @@ const plugins = [
   require('tailwindcss')(`./tailwind.config.js`),
   isProd ? doiuse({
     browsers: browserslistProd,
+    ignore: ['css3-tabsize', 'text-size-adjust', 'css-resize', 'multicolumn'],
     onFeatureUsage: function (usageInfo) {
       console.log(usageInfo.message)
     }
