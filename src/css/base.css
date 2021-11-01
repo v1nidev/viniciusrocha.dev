@@ -32,6 +32,7 @@
   html {
     font-family: 'Antikor Text';
     font-weight: 300;
+    scroll-behavior: smooth;
   }
 
   body {
