@@ -4,16 +4,16 @@ eleventyComputed:
   title: "{{ home.title }}"
 ---
 <header
-  class="home-header container mx-auto px-4 md:px-0 grid grid-cols-12"
-  style="height:89vh;min-height:330px"
+  class="home-header {{classes.container}} grid grid-cols-12"
+  style="height:90vh;min-height:330px"
 >
   <div class="
-    page-title-container md:mt-8 relative flex
-    ml-2 md:ml-0 col-start-1 col-end-10 md:col-start-2 lg:col-end-8 lg:col-end-6 self-end
+    relative flex mt-20
+    col-start-1 col-end-10 md:col-start-2 lg:col-start-1 lg:col-end-8 lg:col-end-6 xl:col-start-2 self-end
   ">
     <h1
       aria-label="Vinicius Rocha"
-      class="capsizedText text-6xl md:text-9xl font-bold leading-none tracking-wide text-gray-100"
+      class="capsizedText text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wide text-gray-100"
     >
       VINI-<div> <span class="text-sm md:text-4xl">&nbsp;&nbsp;</span> CIUS</div>
       ROCHA
@@ -27,12 +27,17 @@ eleventyComputed:
           <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-800"></span>
         </span>
-        <p class="mt-0.5 leading-none text-2xs md:text-xs text-gray-200">Available</p>
+        <p class="mt-0.5 text-2xs md:text-xs lg:text-sm text-gray-200">Available</p>
       </div>
     </div>
   </div>
-  <div class="mt-6 md:mt-10 lg:mt-14 ml-2 md:ml-0 col-start-1 col-end-13 md:col-start-2 sm:col-end-9 lg:col-end-7 xl:col-end-6 self-start">
-    {% p home.description %}
+  <div class="
+    mt-6 md:mt-10 lg:mt-14
+    col-start-1 col-end-13 md:col-start-2 sm:col-end-9 lg:col-start-1 lg:col-end-7 xl:col-start-2 xl:col-end-6 self-start
+  ">
+      <p class="text-sm md:text-md lg:text-base xl:text-lg">
+        {{ home.description }}
+      </p>
   </div>
 
   <div
@@ -52,25 +57,20 @@ eleventyComputed:
       <line x1="5" y1="7" x2="17" y2="7" stroke="#232323" stroke-width="2"/>
       <line y1="1" x2="17" y2="1" stroke="#232323" stroke-width="2"/>
     </svg>
-    <svg class="hidden ml-auto mr-3.5" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0.707107" y1="1.29289" x2="12.7279" y2="13.3137" stroke="black" stroke-width="2"/>
-      <line x1="0.802659" y1="13.3232" x2="12.8235" y2="1.30235" stroke="black" stroke-width="2"/>
-    </svg>
+    <img src="./img/close.svg" width="14" height="15" alt="" class="hidden ml-auto mr-3.5" lazyload="lazy">
   </button>
 
   <div
     id="menu"
     class="
-      fixed top-24 right-10 lg:static lg:top-auto lg:right-auto lg:mt-16
-      flex flex-col
-      lg:col-start-9 lg:col-end-13 lg:row-start-1 lg:row-end-3
-      lg:bg-transparent text-gray-900
-      text-right
+      fixed flex flex-col top-24 right-10 lg:static lg:top-auto lg:right-auto lg:mt-16
+      md:pr-4 lg:col-start-9 lg:col-end-13 lg:row-start-1 lg:row-end-3
+      lg:bg-transparent text-gray-900 text-right
       transition-opacity pointer-events-none opacity-0 lg:opacity-100 lg:pointer-events-auto
     "
   >
     <nav class="
-      font-medium leading-10 text-sm tracking-wider text-gray-800 lg:text-white lg:leading-6 lg:tracking-widest
+      font-medium leading-10 text-base tracking-wider text-gray-800 lg:text-white lg:leading-6 lg:tracking-widest
     ">
       <ul class="nav-link-list lg:inline-block">
         <li class="mt-1"><a class="inline-block" href="#work">LATEST WORK</a></li>

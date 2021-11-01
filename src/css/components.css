@@ -2,7 +2,7 @@
   .home-header {
     max-height: 420px;
     
-    @media screen(sm) {
+    @media screen(md) {
       max-height: initial;
     }
   }
