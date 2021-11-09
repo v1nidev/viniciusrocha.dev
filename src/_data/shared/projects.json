@@ -1,21 +1,26 @@
 {
   "list": [
     {
-      "image": "",
+      "image": "/img/uploads/vaedemilhas.png",
       "title": "Vaedemilhas",
       "description": "Find airline tickets for the best price.",
       "link": "https://clever-lovelace-a622fe.netlify.app/",
       "stack": []
     },
     {
-      "image": "",
+      "image": "/img/uploads/cielo-nuvemshop.png",
       "title": "Cielo & Nuvemshop",
       "description": "Registration form to integrate Cielo in Nuvemshop's e-commerce platform",
       "link": "https://www.cielo.com.br/cadastro-nuvemshop/",
-      "stack": []
+      "stack": [
+        "WEB SITE",
+        "VUE .JS",
+        "REST",
+        "SCSS"
+      ]
     },
     {
-      "image": "",
+      "image": "/img/uploads/www.mychef.com-1.png",
       "title": "MyChef",
       "description": "How about eating real food?",
       "link": "http://www.mychef.com.br/",
