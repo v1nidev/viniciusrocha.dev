@@ -45,13 +45,13 @@ eleventyComputed:
     class="
       fixed top-0 right-0 w-96 h-96 lg:hidden
       transform -rotate-35 translate-x-3/4 -translate-y-3/4 scale-x-102 scale-y-300
-      transition-transform duration-300 bg-green-200
+      transition-transform duration-300 bg-green-200 z-40
     "
     style="will-change: transform"
   >
   </div>
 
-  <button id="menu-button" class="fixed top-0 right-0 lg:hidden w-14 h-16" aria-label="Open menu">
+  <button id="menu-button" class="fixed top-0 right-0 lg:hidden w-14 h-16 z-40" aria-label="Open menu">
     <svg class="ml-auto mr-3.5" width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="2" y1="13" x2="17" y2="13" stroke="#232323" stroke-width="2"/>
       <line x1="5" y1="7" x2="17" y2="7" stroke="#232323" stroke-width="2"/>
@@ -66,7 +66,7 @@ eleventyComputed:
       fixed flex flex-col top-24 right-10 lg:static lg:top-auto lg:right-auto lg:mt-16
       md:pr-4 lg:col-start-9 lg:col-end-13 lg:row-start-1 lg:row-end-3
       lg:bg-transparent text-gray-900 text-right
-      transition-opacity pointer-events-none opacity-0 lg:opacity-100 lg:pointer-events-auto
+      transition-opacity pointer-events-none opacity-0 lg:opacity-100 lg:pointer-events-auto z-40
     "
   >
     <nav class="
