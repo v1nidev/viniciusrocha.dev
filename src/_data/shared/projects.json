@@ -5,7 +5,12 @@
       "title": "Vaedemilhas",
       "description": "Find airline tickets for the best price.",
       "link": "https://clever-lovelace-a622fe.netlify.app/",
-      "stack": []
+      "stack": [
+        "WEB<br>APP",
+        "REACT<br>.JS",
+        "FIRE<br>BASE",
+        "TS"
+      ]
     },
     {
       "image": "/img/uploads/cielo-nuvemshop.png",
@@ -13,18 +18,23 @@
       "description": "Registration form to integrate Cielo in Nuvemshop's e-commerce platform",
       "link": "https://www.cielo.com.br/cadastro-nuvemshop/",
       "stack": [
-        "WEB SITE",
-        "VUE .JS",
+        "WEB<br>SITE",
+        "VUE<br>.JS",
         "REST",
         "SCSS"
       ]
     },
     {
-      "image": "/img/uploads/www.mychef.com-1.png",
+      "image": "/img/uploads/mychef.png",
       "title": "MyChef",
       "description": "How about eating real food?",
       "link": "http://www.mychef.com.br/",
-      "stack": []
+      "stack": [
+        "MOBILE",
+        "REACT<br>NATIVE",
+        "TS",
+        "STYLED<br>COMP."
+      ]
     }
   ]
 }

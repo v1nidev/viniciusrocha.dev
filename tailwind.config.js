@@ -29,7 +29,7 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        '2xs': ['.625rem', '1rem'],
+        '2xs': ['.625rem', '.75rem'],
         '9xl': '7.25rem'
       },
       letterSpacing: {

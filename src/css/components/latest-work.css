@@ -1,0 +1,32 @@
+
+
+@layer components {
+  .corner-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    --b:1px; /* border thickness */
+    --c:#0000 90deg, rgb(191, 228, 41, 40%) 0; /* define the color here */
+    background:
+      conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--c)) 0    0,
+      conic-gradient(from 180deg at top    var(--b) right var(--b),var(--c)) 100% 0,
+      conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--c)) 0    100%,
+      conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--c)) 100% 100%;
+    background-size:15px 15px; /* adjust border length here */
+    background-repeat:no-repeat;
+
+    @media screen(lg) {
+      left: 8px;
+      right: 8px;
+      background-size:30px 30px; /* adjust border length here */
+    }
+
+    @media screen(2xl) {
+      left: -32px;
+      right: -32px;
+    }
+  }
+}

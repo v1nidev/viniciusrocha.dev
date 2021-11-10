@@ -35,10 +35,14 @@ function getShortcodes() {
 
     function sectTitle(pair) {
       return `
-      <h2 class="text-lg xl:text-5xl tracking-wider text-gray-500 leading-snug xl:leading-normal">
+      <h2 class="
+        text-xl md:text-3xl lg:text-4xl tracking-wider
+        leading-snug md:leading-snug lg:leading-normal xl:leading-normal
+        text-gray-400
+      ">
         ${pair[0] ? pair[0] : ''}
         <br>
-        <span class="text-4xl xl:text-8xl font-bold">${pair[1] || pair[1]}</span>
+        <span class="text-5xl md:text-6xl lg:text-7xl font-bold">${pair[1] || pair[1]}</span>
       </h2>
     `
     }
