@@ -50,4 +50,9 @@
   address {
     font-style: normal;
   }
+
+  button:focus, a:focus {
+    outline: 2px dotted theme('colors.green.800');
+    outline-offset: 0.35em;
+  }
 }

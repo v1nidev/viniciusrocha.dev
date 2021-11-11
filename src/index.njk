@@ -100,7 +100,7 @@ eleventyComputed:
     class="
       corner-border container relative xl:mx-auto px-6 xl:px-12 grid grid-cols-12
       mt-20 mx-4 xl:mt-44 {{classes.container}}
-      py-12 sm:py-16 md:py-20 lg:py-24 w-auto
+      py-12 sm:py-16 md:py-20 lg:pt-24 lg:pb-12 w-auto
     "
   >
     <div class="
@@ -143,6 +143,18 @@ eleventyComputed:
               {%- endfor %}
             </div>
           </section>
+          {% if loop.index0 === 0 %}
+            <input type="checkbox" id="expand-projects" class="hidden">
+            <button class="hide-on-expand">
+              <label for="expand-projects" class="flex lg:hidden items-baseline text-green-500 font-medium">
+                {{ home.latestWork.expand }}
+                <svg class="ml-2" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="5.9502" y1="12" x2="5.9502" y2="-3.27835e-08" stroke="#CDE56B" stroke-width="1.5"/>
+                <line x1="6.01032e-08" y1="6.25" x2="12" y2="6.25" stroke="#CDE56B" stroke-width="1.5"/>
+                </svg>
+              </label>
+            </button>
+          {% endif %}
         {%- endfor %}
       </div>
     </div>

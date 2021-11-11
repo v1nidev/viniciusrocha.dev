@@ -4,6 +4,7 @@
   "description": "Front-end developer specialized in build rich experiences in the web. I'm available for freelancing, but considering working on full-time jobs as well.",
   "status": "Available",
   "latestWork": {
-    "title": ["LATEST", "WORK"]
+    "title": ["LATEST", "WORK"],
+    "expand": "Show more"
   }
 }

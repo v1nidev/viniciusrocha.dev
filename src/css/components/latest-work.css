@@ -8,6 +8,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: -1;
     --b:1px; /* border thickness */
     --c:#0000 90deg, rgb(191, 228, 41, 40%) 0; /* define the color here */
     background:
@@ -18,15 +19,25 @@
     background-size:15px 15px; /* adjust border length here */
     background-repeat:no-repeat;
 
+    @media screen(md) {
+      background-size:30px 30px; /* adjust border length here */
+    }
     @media screen(lg) {
       left: 8px;
       right: 8px;
-      background-size:30px 30px; /* adjust border length here */
     }
-
     @media screen(2xl) {
       left: -32px;
       right: -32px;
+    }
+  }
+
+  #expand-projects:checked {
+    ~ .hidden {
+      display: block;
+    }
+    ~ .hide-on-expand {
+      display: none;
     }
   }
 }

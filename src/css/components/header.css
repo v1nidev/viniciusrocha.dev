@@ -3,7 +3,7 @@
     max-height: 440px;
     
     @media screen(lg) {
-      max-height: initial;
+      max-height: 1000px;
     }
   }
 
