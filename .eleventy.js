@@ -25,24 +25,24 @@ module.exports = function (eleventyConfig) {
 
 function getShortcodes() {
   return [
-    function p(content) {
+    function p(content, classes) {
       return `
-      <p class="text-xs md:text-sm lg:text-base">
+      <p class="text-sm lg:text-base ${classes}">
         ${content}
       </p>
     `
     },
 
-    function sectTitle(pair) {
+    function sectTitle(pair, classes) {
       return `
       <h2 class="
         text-xl md:text-3xl lg:text-4xl tracking-wider
         leading-snug md:leading-snug lg:leading-normal xl:leading-normal
-        text-gray-400
+        text-gray-400 ${classes}
       ">
-        ${pair[0] ? pair[0] : ''}
+        ${pair[1] ? pair[0] : ''}
         <br>
-        <span class="text-5xl md:text-6xl lg:text-7xl font-bold">${pair[1] || pair[1]}</span>
+        <span class="text-5xl md:text-6xl lg:text-7xl font-bold">${pair[1] || pair[0]}</span>
       </h2>
     `
     }

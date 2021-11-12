@@ -13,7 +13,7 @@ eleventyComputed:
   ">
     <h1
       aria-label="Vinicius Rocha"
-      class="capsizedText text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-wide text-gray-100"
+      class="capsizedText text-5xl md:text-7xl xl:text-8xl font-bold tracking-wide text-gray-100"
     >
       VINI-<div> <span class="text-sm md:text-4xl">&nbsp;&nbsp;</span> CIUS</div>
       ROCHA
@@ -35,7 +35,7 @@ eleventyComputed:
     mt-6 md:mt-10 lg:mt-14
     col-start-1 col-end-13 sm:col-start-2 sm:col-end-9 lg:col-end-7 xl:col-end-6 self-start
   ">
-      <p class="text-sm md:text-md lg:text-base xl:text-lg">
+      <p class="text-sm md:text-base">
         {{ home.description }}
       </p>
   </div>
@@ -130,25 +130,25 @@ eleventyComputed:
               <h3 class="text-xl font-medium text-gray-300">{{ project.title }}</h3>
               <p class="text-sm">{{ project.description }}</p>
             </div>
-            <div class="absolute top-6 right-0 w-11">
+            <ul class="absolute top-6 right-0 w-11" style="z-index:-1">
               {% for tech in project.stack -%}
-                <div class="
+                <li class="
                   flex justify-center items-center
-                  {% if loop.index0 === 0 %} border-t{% else %}{% endif %}
+                  {% if loop.index0 === 0 %} border-t bg-gray-900{% else %}{% endif %}
                   border-b border-r border-l border-gray-200
                   pl-1.5 pr-2 h-16 text-right
                 ">
                   <p class="text-2xs">{{ tech | safe }}</p>
-                </div>
+                </li>
               {%- endfor %}
-            </div>
+            </ul>
           </section>
           {% if loop.index0 === 0 %}
             <input type="checkbox" id="expand-projects" class="hidden">
             <button class="hide-on-expand lg:hidden">
               <label for="expand-projects" class="flex lg:hidden items-baseline text-green-500 font-medium">
                 {{ home.latestWork.expand }}
-                <svg class="ml-2" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="ml-3" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="5.9502" y1="12" x2="5.9502" y2="-3.27835e-08" stroke="#CDE56B" stroke-width="1.5"/>
                 <line x1="6.01032e-08" y1="6.25" x2="12" y2="6.25" stroke="#CDE56B" stroke-width="1.5"/>
                 </svg>
