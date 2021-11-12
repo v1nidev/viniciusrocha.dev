@@ -35,7 +35,7 @@ eleventyComputed:
     mt-6 md:mt-10 lg:mt-14
     col-start-1 col-end-13 sm:col-start-2 sm:col-end-9 lg:col-end-7 xl:col-end-6 self-start
   ">
-      <p class="text-sm md:text-base">
+      <p class="max-w-prose text-sm md:text-base">
         {{ home.description }}
       </p>
   </div>
@@ -157,6 +157,38 @@ eleventyComputed:
           {% endif %}
         {%- endfor %}
       </div>
+    </div>
+  </section>
+
+  <section class="{{classes.container}} mt-24 xl:mt-56">
+    <div class="mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
+      {% sectTitle home.about.title %}
+      {% p home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
+      {% if home.about.link %}
+        <a href="{{home.about.link.href}}" class="inline-block mt-14 text-green-500 font-medium tracking-wide">
+          {{ home.about.link.label }}
+        </a>
+      {% endif %}
+    </div>
+
+    <div class="
+      flex flex-row md:flex-col col-span-12 md:col-start-9 md:col-span-3 order-first md:order-none
+      justify-center md:items-end lg:items-center
+    ">
+      {%- for achievement in home.about.achievements -%}
+        <section class="
+          {{ 'md:mt-4 lg:mt-6 border-l-0' if loop.index0 !== 0 }} border border-dashed
+          px-3 pt-3 pb-2 h-28 w-28 flex-shrink-0
+          sm:px-3 sm:pt-4 sm:pb-3 sm:h-36 sm:w-36
+          md:border-l md:px-3 md:pt-4 md:pb-4 md:h-36 md:w-36
+          lg:px-6 lg:pt-7 lg:pb-6 lg:h-48 lg:w-48
+        ">
+          <h3 class="text-sm sm:text-base lg:text-xl font-medium tracking-wide">{{ achievement[0] | safe }}</h3>
+          {% if achievement[1] %}
+            <p class="mt-0.5 sm:mt-1 text-2xs sm:text-xs lg:text-sm tracking-wide text-gray-300">{{ achievement[1] | safe }}</p>
+          {% endif %}
+        </section>
+      {%- endfor %}
     </div>
   </section>
 </main>

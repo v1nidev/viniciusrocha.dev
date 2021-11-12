@@ -6,5 +6,20 @@
   "latestWork": {
     "title": ["LATEST", "WORK"],
     "expand": "Show more"
+  },
+  "about": {
+    "title": ["ABOUT"],
+    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur:",
+    "logos": [],
+    "link": {
+      "label": "See more on my LinkedIn",
+      "href": "https://www.linkedin.com/in/vinirocha-dev/"
+    },
+
+    "achievements": [
+      ["20+<br>Projects"],
+      ["8<br>Companies", "Full-time jobs and freelance clients"],
+      ["6<br>Years xp.", "1st front-end job: 2016"]
+    ]
   }
 }

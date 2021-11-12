@@ -33,6 +33,7 @@ module.exports = {
         '9xl': '7.25rem'
       },
       letterSpacing: {
+        wide: '.075em',
         wider: '.15em',
         widest: '.3em',
       },
