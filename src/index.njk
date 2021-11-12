@@ -161,7 +161,7 @@ eleventyComputed:
   </section>
 
   <section class="{{classes.container}} mt-24 xl:mt-56">
-    <div class="mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
+    <div class="mt-24 md:mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
       {% sectTitle home.about.title %}
       {% p home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
       {% if home.about.link %}
@@ -172,7 +172,7 @@ eleventyComputed:
     </div>
 
     <div class="
-      flex flex-row md:flex-col col-span-12 md:col-start-9 md:col-span-3 order-first md:order-none
+      flex flex-row mt-8 md:mt-0 md:flex-col col-span-12 md:col-start-9 md:col-span-3 order-first md:order-none
       justify-center md:items-end lg:items-center
     ">
       {%- for achievement in home.about.achievements -%}
