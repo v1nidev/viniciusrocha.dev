@@ -2,16 +2,19 @@
   "email": "vinirocha.dev@gmail.com",
   "social": [
     {
-      "name": "github",
-      "link": "https://github.com/v1nidev"
+      "label": "github",
+      "href": "https://github.com/v1nidev",
+      "short": "/v1nidev"
     },
     {
-      "name": "linkedin",
-      "link": "https://www.linkedin.com/in/vinirocha-dev/"
+      "label": "linkedIn",
+      "href": "https://www.linkedin.com/in/vinirocha-dev/",
+      "short": "/in/vinirocha-dev"
     },
     {
-      "name": "twitter",
-      "link": "https://twitter.com/v1nidev"
+      "label": "twitter",
+      "href": "https://twitter.com/v1nidev",
+      "short": "/v1nidev"
     }
   ]
 }

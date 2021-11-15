@@ -191,4 +191,29 @@ eleventyComputed:
       {%- endfor %}
     </div>
   </section>
+
+  <section id="contact" class="top-level-section {{classes.container}} mt-56 lg:mt-48 xl:mt-56">
+    {% sectTitle home.contact.title, 'col-span-12' %}
+
+    <address class="flex flex-col md:flex-row justify-between mt-6 col-span-12">
+      <div>
+        <p class="text-gray-300">
+          {{ home.contact.address.label }}
+        </p>
+        <a href="mailto:{{ shared.contact.email }}" class="text-green-500 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide">
+          {{shared.contact.email}}
+        </a>
+      </div>
+      <div class="mt-8 md:mt-0 md:mx-auto">
+        {% for social in shared.contact.social %}
+          <p class="{{ 'mt-4' if loop.index0 !== 0 }} text-sm lg:text-base text-gray-300 leading-4 capitalize">
+            {{ social.label }}
+          </p>
+          <a href="{{ social.href }}" class="text-green-500 text-base lg:text-lg font-medium tracking-wide">
+            {{ social.short }}
+          </a>
+        {% endfor %}
+      </div>
+    </address>
+  </section>
 </main>
