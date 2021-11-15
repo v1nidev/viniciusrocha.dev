@@ -3,7 +3,7 @@
     {
       "image": "/img/uploads/vaedemilhas.png",
       "title": "Vaedemilhas",
-      "description": "Find airline tickets for the best price.",
+      "description": "Web app to search airline tickets for the best price.",
       "link": "https://clever-lovelace-a622fe.netlify.app/",
       "stack": [
         "WEB<br>APP",
@@ -15,7 +15,7 @@
     {
       "image": "/img/uploads/cielo-nuvemshop.png",
       "title": "Cielo & Nuvemshop",
-      "description": "Registration form to integrate Cielo in Nuvemshop's e-commerce platform",
+      "description": "Registration form to integrate Cielo in Nuvemshop's e-commerce platform.",
       "link": "https://www.cielo.com.br/cadastro-nuvemshop/",
       "stack": [
         "WEB<br>SITE",
@@ -27,7 +27,7 @@
     {
       "image": "/img/uploads/mychef.png",
       "title": "MyChef",
-      "description": "How about eating real food?",
+      "description": "How about eating real food? App to connect you with professional and amateur chefs.",
       "link": "http://www.mychef.com.br/",
       "stack": [
         "MOBILE",
