@@ -4,3 +4,7 @@
 @import "./components/tailwind.css";
 @import "./components/header.css";
 @import "./components/latest-work.css";
+
+.top-level-section {
+  scroll-margin-top: 6em;
+}

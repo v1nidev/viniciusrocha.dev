@@ -1,6 +1,6 @@
 @layer components {
   .home-header {
-    max-height: 440px;
+    max-height: 500px;
     
     @media screen(lg) {
       max-height: 1000px;

@@ -70,37 +70,39 @@ eleventyComputed:
     "
   >
     <nav class="
+      lg:fixed container lg:left-0 lg:right-0 lg:mx-auto lg:pr-8
       font-medium leading-10 text-base tracking-wider text-gray-800 lg:text-white lg:leading-6 lg:tracking-widest
     ">
-      <ul class="nav-link-list lg:inline-block">
-        <li class="mt-1"><a class="inline-block" href="#work">LATEST WORK</a></li>
-        <li class="mt-1"><a class="inline-block" href="#about">ABOUT</a></li>
-        <li class="mt-1 -mx-3 pt-1 px-3 text-gray-800 lg:bg-green-200"><a class="inline-block" href="#contact">CONTACT</a></li>
+      <ul id="nav-link-list" class="nav-link-list lg:inline-block">
+        <li class="mt-1 pt-1"><a class="inline-block" href="#work">LATEST WORK</a></li>
+        <li class="mt-1 pt-1"><a class="inline-block" href="#about">ABOUT</a></li>
+        <li class="mt-1 pt-1"><a class="inline-block" href="#contact">CONTACT</a></li>
       </ul>
     </nav>
     <address class="hidden mt-auto lg:block">
-      <a class="inline-block -mx-3 pt-0.5 px-3 bg-gray-100" href="mailto:{{ shared.contact.email }}">{{ shared.contact.email }}</a><br>
+      <a class="inline-block -mx-3 pt-0.5 px-3 bg-gray-100" href="mailto:{{ shared.contact.email }}">
+        {{ shared.contact.email }}
+      </a>
+      <br>
       <span class="mt-3 inline-block -mx-3 pt-0.5 px-3 bg-gray-100">
         {%- for social in shared.contact.social -%}
           {% if loop.index0 !== 0 %}
             <span> / </span>
           {% endif %}
-          <a href="{{ social.link }}">{{ social.name }}</a>
+          <a href="{{ social.href  }}">{{ social.label }}</a>
         {%- endfor -%}
       </span>
     </address>
   </div>
 </header>
 
-
-
 <main class="pb-20">
   <section
     id="work"
     class="
-      corner-border container relative xl:mx-auto px-6 xl:px-12 grid grid-cols-12
-      mt-20 mx-4 xl:mt-44 {{classes.container}}
-      py-12 sm:py-16 md:py-20 lg:pt-24 lg:pb-12 w-auto
+      top-level-section corner-border container relative grid {{classes.container}}
+      mt-20 mx-4 md:mt-32 xl:mt-44 xl:mx-auto
+      px-6 xl:px-12 py-12 sm:py-16 md:py-20 lg:pt-24 lg:pb-12 w-auto grid-cols-12
     "
   >
     <div class="
@@ -160,12 +162,12 @@ eleventyComputed:
     </div>
   </section>
 
-  <section class="{{classes.container}} mt-24 xl:mt-56">
-    <div class="mt-24 md:mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
+  <section id="about" class="top-level-section {{classes.container}} mt-32 md:mt-32 lg:mt-48 xl:mt-56">
+    <div class="mt-32 md:mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
       {% sectTitle home.about.title %}
       {% p home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
       {% if home.about.link %}
-        <a href="{{home.about.link.href}}" class="inline-block mt-14 text-green-500 font-medium tracking-wide">
+        <a href="{{home.about.link.href}}" class="inline-block mt-8 lg:mt-14 text-green-500 font-medium tracking-wide">
           {{ home.about.link.label }}
         </a>
       {% endif %}
