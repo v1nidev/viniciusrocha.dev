@@ -8,7 +8,11 @@ module.exports = {
       "dist/**/*.html",
     ],
     safelist: [
-      'scale-x-225'
+      'scale-x-225',
+      '-mx-3',
+      'px-3',
+      'text-gray-800',
+      'lg:bg-green-200',
     ],
     options: {
       whitelist: [],

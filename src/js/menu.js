@@ -21,7 +21,6 @@ export function watchActiveMenuLink() {
   if (!window.matchMedia('(min-width: 1024px)').matches || !window.IntersectionObserver)
     return
 
-  // const classList = ['px-3', 'text-gray-800', 'lg:bg-green-200']
   const classList = ['-mx-3', 'px-3', 'text-gray-800', 'lg:bg-green-200']
   const navLinkList = document.getElementById('nav-link-list')
   const targetSections = Array.prototype.slice
