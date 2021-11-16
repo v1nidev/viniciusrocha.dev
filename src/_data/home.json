@@ -11,8 +11,21 @@
 
   "about": {
     "title": ["ABOUT"],
-    "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur:",
-    "logos": [],
+    "description": "<p>I've been helping small clients, startups and large companies build websites and web applications since 2016. Over these years, I've been fortunate to work alongside amazing people, with whom I have faced many challenges.</p><p>My focus is develop web apps writing reusable and readable code and these are some of the tools I've used to acomplish that:</p>",
+    "logos": [
+      {
+        "title": "React.js",
+        "src": "/img/uploads/react.svg"
+      },
+      {
+        "title": "TypeScript",
+        "src": "/img/uploads/typescript.svg"
+      },
+      {
+        "title": "Vue.js and Nuxt.js",
+        "src": "/img/uploads/vue.svg"
+      }
+    ],
     "link": {
       "label": "See more on my LinkedIn",
       "href": "https://www.linkedin.com/in/vinirocha-dev/"

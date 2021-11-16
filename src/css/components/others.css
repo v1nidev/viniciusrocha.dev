@@ -1,0 +1,11 @@
+@layer components {
+  .top-level-section {
+    scroll-margin-top: 6em;
+  }
+
+  .body-text {
+    p ~ p {
+      margin-top: 1em;
+    }
+  }
+}

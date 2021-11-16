@@ -25,11 +25,11 @@ module.exports = function (eleventyConfig) {
 
 function getShortcodes() {
   return [
-    function p(content, classes) {
+    function bodyText(content, classes) {
       return `
-      <p class="text-sm lg:text-base ${classes}">
+      <div class="body-text text-sm lg:text-base ${classes}">
         ${content}
-      </p>
+      </div>
     `
     },
 
