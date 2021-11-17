@@ -1,4 +1,5 @@
-import { getMenuToggler, watchActiveMenuLink } from "./menu";
+import { watchMenuButtonClick, watchActiveMenuLink, closeOnLinkClick } from "./menu";
 
-document.getElementById('menu-button').addEventListener('click', getMenuToggler())
+watchMenuButtonClick()
 watchActiveMenuLink()
+closeOnLinkClick()

@@ -13,6 +13,7 @@ module.exports = {
       'px-3',
       'text-gray-800',
       'lg:bg-green-200',
+      'opacity-40',
     ],
     options: {
       whitelist: [],
