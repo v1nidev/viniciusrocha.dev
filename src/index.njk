@@ -180,7 +180,14 @@ eleventyComputed:
       {% bodyText home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
       <div class="flex mt-5 lg:mt-7">
         {% for logo in home.about.logos %}
-          <img src="{{ logo.src }}" alt="{{ logo.title }}" title="{{ logo.title }}" class="h-10 mr-6 lg:h-auto" />
+          <img
+            src="{{ logo.src }}"
+            alt="{{ logo.title }}"
+            title="{{ logo.title }}"
+            class="h-10 mr-6 lg:h-auto"
+            width="{{ logo.width }}"
+            height="{{ logo.height }}"
+          />
         {% endfor %}
       </div>
       {% if home.about.link %}

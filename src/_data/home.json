@@ -15,15 +15,21 @@
     "logos": [
       {
         "title": "React.js",
-        "src": "/img/uploads/react.svg"
+        "src": "/img/uploads/react.svg",
+        "width": "60",
+        "height": "53"
       },
       {
         "title": "TypeScript",
-        "src": "/img/uploads/typescript.svg"
+        "src": "/img/uploads/typescript.svg",
+        "width": "53",
+        "height": "53"
       },
       {
         "title": "Vue.js and Nuxt.js",
-        "src": "/img/uploads/vue.svg"
+        "src": "/img/uploads/vue.svg",
+        "width": "62",
+        "height": "53"
       }
     ],
     "link": {
