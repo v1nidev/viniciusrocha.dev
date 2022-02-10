@@ -32,7 +32,7 @@
   }
 
   html {
-    font-family: 'Antikor Text';
+    font-family: 'Antikor Text', 'Courier New';
     font-weight: 300;
     scroll-behavior: smooth;
   }
