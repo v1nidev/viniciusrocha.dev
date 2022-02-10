@@ -26,9 +26,21 @@
         "height": "53"
       },
       {
+        "title": "Redux",
+        "src": "/img/uploads/redux.svg",
+        "width": "56",
+        "height": "53"
+      },
+      {
         "title": "Vue.js and Nuxt.js",
         "src": "/img/uploads/vue.svg",
         "width": "62",
+        "height": "53"
+      },
+      {
+        "title": "@testing-library and Jest",
+        "src": "/img/uploads/testing-library.png",
+        "width": "53",
         "height": "53"
       }
     ],

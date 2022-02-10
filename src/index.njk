@@ -121,7 +121,7 @@ eleventyComputed:
         flex flex-col lg:flex-row justify-between items-center lg:items-start
         mt-10 lg:mt-8
       ">
-      
+
         {%- for project in shared.projects.list -%}
           <section
             class="
@@ -178,13 +178,13 @@ eleventyComputed:
     <div class="mt-32 md:mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
       {% sectTitle home.about.title %}
       {% bodyText home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
-      <div class="flex mt-5 lg:mt-7">
+      <div class="flex mt-5 lg:mt-7 items-center">
         {% for logo in home.about.logos %}
           <img
             src="{{ logo.src }}"
             alt="{{ logo.title }}"
             title="{{ logo.title }}"
-            class="h-10 mr-6 lg:h-auto"
+            class="mr-6 w-10 lg:mr-6 lg:w-auto lg:h-auto"
             width="{{ logo.width }}"
             height="{{ logo.height }}"
           />
