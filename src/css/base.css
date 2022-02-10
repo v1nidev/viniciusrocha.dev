@@ -7,8 +7,9 @@
         url('../fonts/AntikorText-Light/AntikorText-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
   }
-  
+
   @font-face {
     font-family: 'Antikor Text';
     src: local('Antikor Text Medium'), local('Antikor-Text-Medium'),
@@ -18,7 +19,7 @@
     font-weight: 500;
     font-style: normal;
   }
-  
+
   @font-face {
     font-family: 'Antikor Text';
     src: local('Antikor Text Bold'), local('Antikor-Text-Bold'),
@@ -27,8 +28,9 @@
         url('../fonts/AntikorText-Bold/AntikorText-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
   }
-  
+
   html {
     font-family: 'Antikor Text';
     font-weight: 300;
