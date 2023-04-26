@@ -1,20 +1,4 @@
 {
-  "email": "vinirocha.dev@gmail.com",
-  "social": [
-    {
-      "label": "github",
-      "href": "https://github.com/v1nidev",
-      "short": "/v1nidev"
-    },
-    {
-      "label": "linkedIn",
-      "href": "https://www.linkedin.com/in/vinirocha-dev/",
-      "short": "/in/vinirocha-dev"
-    },
-    {
-      "label": "twitter",
-      "href": "https://twitter.com/v1nidev",
-      "short": "/v1nidev"
-    }
-  ]
+  "email": "virc@tuta.io",
+  "social": []
 }
