@@ -13,10 +13,10 @@ eleventyComputed:
 
 <header
   class="home-header {{classes.container}}"
-  style="height:90vh;min-height:330px"
+  style="height:90vh;min-height:500px"
 >
   <div class="
-    relative flex mt-20
+    relative flex mt-20 md:mt-32 lg:mt-20
     col-start-1 col-end-10 sm:col-start-2 lg:col-end-8 lg:col-end-6 self-end
   ">
     <h1
@@ -41,9 +41,9 @@ eleventyComputed:
   </div>
   <div class="
     mt-6 md:mt-10 lg:mt-14
-    col-start-1 col-end-13 sm:col-start-2 sm:col-end-9 lg:col-end-7 xl:col-end-6 self-start
+    col-start-1 col-end-13 sm:col-start-2 sm:col-end-9 lg:col-end-7 xl:col-end-7 self-start
   ">
-      <p class="max-w-prose text-sm md:text-base">
+      <p class="max-w-prose text-sm md:text-base lg:text-lg text-gray-400">
         {{ home.description }}
       </p>
   </div>
@@ -79,12 +79,13 @@ eleventyComputed:
   >
     <nav class="
       lg:fixed container lg:left-0 lg:right-0 lg:mx-auto lg:pr-8
-      font-medium leading-10 text-base tracking-wider text-gray-800 lg:text-white lg:leading-6 lg:tracking-widest
+      font-medium leading-10 text-base text-gray-800 lg:text-white lg:leading-6 lg:tracking-wide
+      pointer-events-none
     ">
-      <ul id="nav-link-list" class="nav-link-list lg:inline-block">
-        <li class="mt-1 pt-1"><a class="inline-block" href="#work">LATEST WORK</a></li>
-        <li class="mt-1 pt-1"><a class="inline-block" href="#about">ABOUT</a></li>
-        <li class="mt-1 pt-1"><a class="inline-block" href="#contact">CONTACT</a></li>
+      <ul id="nav-link-list" class="nav-link-list lg:inline-block pointer-events-auto">
+        <li class="mt-1 pt-1"><a class="inline-block" href="#work">Experience</a></li>
+        <li class="mt-1 pt-1"><a class="inline-block" href="#about">About</a></li>
+        <li class="mt-1 pt-1"><a class="inline-block" href="#contact">Contact</a></li>
       </ul>
     </nav>
     <address class="hidden mt-auto lg:block">
@@ -96,7 +97,7 @@ eleventyComputed:
           {% if loop.index0 !== 0 %}
             <span> / </span>
           {% endif %}
-          <a href="{{ social.href  }}">{{ social.label }}</a>
+          <a href="{{ social.href }}">{{ social.label }}</a>
         {%- endfor -%}
       </span>
     </address>
@@ -104,80 +105,83 @@ eleventyComputed:
 </header>
 
 <main class="pb-20">
-  <section
-    id="work"
-    class="
-      top-level-section corner-border container relative grid {{classes.container}}
-      mt-20 mx-4 md:mt-32 xl:mt-44 xl:mx-auto
-      px-6 xl:px-12 py-12 sm:py-16 md:py-20 lg:pt-24 lg:pb-12 w-auto grid-cols-12
-    "
-  >
-    <div class="
-      mx-auto max-w-xs lg:max-w-none col-span-12 sm:col-span-8 sm:col-start-3
-      lg:col-span-12 lg:col-start-1 lg:col-end-13
-    ">
-      {% sectTitle home.latestWork.title %}
-      <div class="
-        flex flex-col lg:flex-row justify-between items-center lg:items-start
-        mt-10 lg:mt-8
-      ">
+  <section id="work" class="top-level-section mt-32 md:mt-56 lg:mt-48 xl:mt-96">
+    <div class="{{classes.container}}">
+      <div class="flex col-span-12 md:col-start-2">
+        <h2
+          id="work-title"
+          class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-300"
+        >
+          {{ home.experience.title }}
+        </h2>
+        <span class="ml-2 md:text-lg lg:text-xl font-bold text-green-800 green-text-shadow">{{ home.experience.sectionNumber }}</span>
+      </div>
+    </div>
 
-        {%- for project in shared.projects.list -%}
-          <section
-            class="
-              relative pr-9 {{ 'hidden mt-7 lg:mt-0 lg:ml-8 xl:ml-10' if loop.index0 !== 0 }} lg:block
-              {{ 'mb-7 lg:mb-0 lg:mr-8 xl:mr-10' if loop.length !== loop.index }}
-            "
-            style="flex-basis:33%"
+
+
+    <div class="tabs mt-10 lg:mt-16 container lg:mx-auto grid grid-cols-12 md:px-4">
+      <div
+        class="relative flex flex-row-reverse pt-2 md:flex-col flex-nowrap col-span-12 md:col-start-2 md:col-span-4 lg:col-start-2 lg:col-span-3 overflow-x-auto md:overflow-hidden"
+        role="tablist"
+        aria-labelledby="work-title"
+      >
+        {%- for job in shared.experience.jobs  -%}
+          <button
+            role="tab"
+            aria-selected="{{ "true" if loop.first  else "false" }}"
+            id="{{ job.company }}-tab"
+            class="{{ "last " if loop.last }}{{ "first " if loop.first }}
+              relative mb-4 pb-2 md:inline-flex md:mb-0 md:ml-10 md:pb-0 md:h-20 flex-grow-0 flex-shrink-0
+              font-light md:text-left text-gray-400"
           >
-            <a href="{{ project.link }}" class="block border border-green-500 p-px">
-              <img
-                src="{{ project.image }}"
-                alt="Vaemilhas"
-                lazyload="lazy"
-                class="relative z-10"
-                width="324"
-                height="216"
-              >
-            </a>
-            <div class="relative z-10 py-4 pl-3 pr-5">
-              <h3 class="text-xl font-medium text-gray-300">{{ project.title }}</h3>
-              <p class="text-sm">{{ project.description }}</p>
-            </div>
-            <ul class="absolute top-6 right-0 w-11" style="z-index:-1">
-              {% for tech in project.stack -%}
-                <li class="
-                  flex justify-center items-center
-                  {% if loop.index0 === 0 %} border-t bg-gray-900{% else %}{% endif %}
-                  border-b border-r border-l border-gray-200
-                  pl-1.5 pr-2 h-16 text-right
-                ">
-                  <p class="text-2xs">{{ tech | safe }}</p>
-                </li>
-              {%- endfor %}
-            </ul>
+            <span class="label">{{ job.company }}</span>
+            <span class="dash hidden h-px flex-grow bg-gray-500" role="presentation"></span>
+          </button>
+        {%- endfor %}
+      </div>
+
+      <div class="tabpanel-container relative mt-6 md:mt-0 col-span-12 md:col-span-6 md:col-start-6 lg:col-span-7 lg:col-start-5 px-4 md:px-0">
+        {%- for job in shared.experience.jobs -%}
+          <section
+            role="tabpanel"
+            aria-labelledby="{{ job.company }}-tab"
+            class="md:border-l md:border-gray-500 md:pl-12 md:py-8"
+            {% if loop.index0 !== 0 %}hidden{% endif %}
+          >
+            {%- for role in job.roles -%}
+              <section class="{{ "mt-7" if not loop.first }}">
+                <h3 class="text-xl text-gray-300">{{ role.title }}</h3>
+                <time class="text-sm text-gray-500">{{ role.period }}</time>
+                <p class="{{ classes.bodyText }} mt-2 text-gray-400">{{ role.description }}</p>
+                {% if role.list and role.list.length %}
+                  <ul class="{{ classes.bodyText }} decorated-list mt-1 text-gray-400">
+                    {%- for roleItem in role.list -%}
+                      <li class="mt-0">{{ roleItem }}</li>
+                    {%- endfor %}
+                  </ul>
+                {% endif %}
+              </section>
+            {%- endfor %}
           </section>
-          {% if loop.index0 === 0 %}
-            <input type="checkbox" id="expand-projects" class="hidden">
-            <button class="hide-on-expand lg:hidden">
-              <label for="expand-projects" class="flex lg:hidden items-baseline text-green-500 font-medium">
-                {{ home.latestWork.expand }}
-                <svg class="ml-3" aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="5.9502" y1="12" x2="5.9502" y2="-3.27835e-08" stroke="#CDE56B" stroke-width="1.5"/>
-                <line x1="6.01032e-08" y1="6.25" x2="12" y2="6.25" stroke="#CDE56B" stroke-width="1.5"/>
-                </svg>
-              </label>
-            </button>
-          {% endif %}
         {%- endfor %}
       </div>
     </div>
   </section>
 
-  <section id="about" class="top-level-section {{classes.container}} mt-32 md:mt-32 lg:mt-48 xl:mt-56">
-    <div class="mt-32 md:mt-10 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
-      {% sectTitle home.about.title %}
-      {% bodyText home.about.description, 'mt-1 lg:mt-2 max-w-prose' %}
+  <section id="about" class="top-level-section {{classes.container}} mt-32 md:mt-64 lg:mt-80 xl:mt-96 items-center">
+    <div class="mt-32 md:mt-0 col-span-12 md:col-start-2 md:col-span-6 lg:col-start-2 lg:col-span-5">
+
+      <div class="flex col-span-12 md:col-start-2">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-300">
+          {{ home.about.title }}
+        </h2>
+        <span class="ml-2 md:text-lg lg:text-xl font-bold text-green-800 green-text-shadow">{{ home.about.sectionNumber }}</span>
+      </div>
+
+      <div class="{{ classes.bodyText }} mt-4 lg:mt-8 max-w-prose text-gray-400">
+        {{ home.about.description | safe}}
+      </div>
       <div class="flex mt-5 lg:mt-7 items-center">
         {% for logo in home.about.logos %}
           <img
@@ -198,7 +202,7 @@ eleventyComputed:
     </div>
 
     <div class="
-      flex flex-row mt-8 md:mt-0 md:flex-col col-span-12 md:col-start-9 md:col-span-3 order-first md:order-none
+      flex flex-row md:flex-col col-span-12 md:col-start-9 md:col-span-3 order-first md:order-none
       justify-center md:items-end lg:items-center
     ">
       {%- for achievement in home.about.achievements -%}
@@ -211,17 +215,22 @@ eleventyComputed:
         ">
           <h3 class="text-sm sm:text-base lg:text-xl font-medium tracking-wide">{{ achievement[0] | safe }}</h3>
           {% if achievement[1] %}
-            <p class="mt-0.5 sm:mt-1 text-2xs sm:text-xs lg:text-sm tracking-wide text-gray-300">{{ achievement[1] | safe }}</p>
+            <p class="mt-0.5 sm:mt-1 text-2xs sm:text-xs lg:text-sm tracking-wide text-gray-400">{{ achievement[1] | safe }}</p>
           {% endif %}
         </section>
       {%- endfor %}
     </div>
   </section>
 
-  <section id="contact" class="top-level-section {{classes.container}} mt-56 lg:mt-48 xl:mt-56">
-    {% sectTitle home.contact.title, 'col-span-12' %}
+  <section id="contact" class="top-level-section {{classes.container}}  mt-56 md:mt-64 lg:mt-80 xl:mt-96">
+    <div class="flex col-span-12 md:col-start-2">
+      <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-300">
+        {{ home.contact.title }}
+      </h2>
+      <span class="ml-2 md:text-lg lg:text-xl font-bold text-green-800 green-text-shadow">{{ home.contact.sectionNumber }}</span>
+    </div>
 
-    <address class="flex flex-col md:flex-row justify-between mt-6 col-span-12">
+    <address class="flex flex-col md:flex-row justify-between mt-8 col-span-12 md:col-start-2">
       <div>
         <p class="text-gray-300">
           {{ home.contact.address.label }}

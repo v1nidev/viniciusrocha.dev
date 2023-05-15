@@ -53,8 +53,14 @@
     font-style: normal;
   }
 
-  button:focus {
-    outline: 2px dotted theme('colors.green.800');
-    outline-offset: 0.35em;
+  button, a {
+    &:focus {
+      outline: 2px dotted theme('colors.green.800');
+      outline-offset: 0.4em;
+    }
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
   }
 }

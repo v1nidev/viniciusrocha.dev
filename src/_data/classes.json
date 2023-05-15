@@ -1,3 +1,4 @@
 {
-  "container": "container lg:mx-auto px-4 grid grid-cols-12"
+  "container": "container lg:mx-auto px-4 grid grid-cols-12",
+  "bodyText": "body-text text-sm lg:text-base"
 }

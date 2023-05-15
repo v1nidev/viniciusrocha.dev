@@ -1,0 +1,104 @@
+@layer components {
+  [role="tablist"] {
+    padding: 0 23vw;
+    @media screen(md) {
+      padding: 0;
+    }
+  }
+  [role="tab"] {
+    width: 50vw;
+
+    &:focus-visible {
+      outline: none;
+      & .label {
+        outline: 2px dotted theme('colors.green.800');
+        outline-offset: 0.35em;
+      }
+    }
+
+    .dash {
+      margin-top: 0.5em;
+      margin-left: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      width: 11px;
+      height: 11px;
+      border: 1px solid theme("colors.green.800");
+      border-radius: 50%;
+    }
+
+    &[aria-selected="true"] {
+      font-weight: bold;
+      color: theme("colors.green.800");
+      &::before {
+        background-color: theme("colors.green.800");
+      }
+      @media screen(md) {
+        .dash {
+          display: block;
+        }
+      }
+    }
+
+    &:not(.first)::after {
+      content: "";
+      position: absolute;
+      right: calc(-50% + 5px);
+      bottom: 0;
+      left: calc(50% + 5px);
+      height: 1px;
+      background-color: theme("colors.green.800");
+    }
+
+    @media screen(md) {
+      margin-right: 0;
+      margin-left: 0;
+      width: auto;
+
+      &::before {
+        content: "";
+        position: relative;
+        left: -26px;
+      }
+
+      &.last::after {
+        content: initial;
+      }
+
+      &:not(.last)::after {
+        content: "";
+        position: absolute;
+        right: calc(-50% + 5px);
+        top: 16px;
+        bottom: calc(-50% + 34px);
+        left: -21px;
+        width: 1px;
+        height: auto;
+        background-color: theme("colors.green.800");
+      }
+    }
+  }
+
+  .tabpanel-container {
+    @media screen(md) {
+      &::before,
+      &::after,
+      .pointer::before {
+        content: "";
+        height: 1px;
+        background: theme("colors.gray.500");
+      }
+      &::before,
+      &::after {
+        position: absolute;
+        left: 0;
+        width: 0.75rem;
+      }
+    }
+  }
+}

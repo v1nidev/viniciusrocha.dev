@@ -12,7 +12,7 @@ module.exports = function (eleventyConfig) {
     ],
     ghostMode: false
   })
-  
+
   shortcodes.forEach(fn => eleventyConfig.addShortcode(fn.name, fn))
 
   return {
@@ -30,20 +30,6 @@ function getShortcodes() {
       <div class="body-text text-sm lg:text-base ${classes}">
         ${content}
       </div>
-    `
-    },
-
-    function sectTitle(pair, classes) {
-      return `
-      <h2 class="
-        text-xl md:text-3xl lg:text-4xl tracking-wider
-        leading-snug md:leading-snug lg:leading-normal xl:leading-normal
-        text-gray-400 ${classes}
-      ">
-        ${pair[1] ? pair[0] : ''}
-        <br>
-        <span class="text-5xl md:text-6xl lg:text-7xl font-bold">${pair[1] || pair[0]}</span>
-      </h2>
     `
     }
   ]
