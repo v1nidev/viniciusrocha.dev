@@ -1,20 +1,20 @@
 {
-  "title": "Vinicius Rocha | Front-end developer",
+  "title": "Vinicius Rocha | Front-end engineer",
   "name": "Vinicius Rocha",
-  "description": "Front-end developer specialized in build rich experiences in the web. I'm available for freelancing, but considering working on full-time jobs as well.",
+  "description": "Front-end engineer specialized in building rich experiences on the web. I'm available for full-time and freelancing work, although most of my career is filled with front-end jobs, I'm open to work as a full-stack engineer.",
   "status": "Available",
-
-  "latestWork": {
-    "title": ["LATEST", "WORK"],
+  "experience": {
+    "title": "Experience",
+    "sectionNumber": "001",
     "expand": "Show more"
   },
-
   "about": {
-    "title": ["ABOUT"],
-    "description": "<p>I've been helping small clients, startups and large companies build websites and web applications since 2016. Over these years, I've been fortunate to work alongside amazing people, with whom I have faced many challenges.</p><p>My focus is develop web apps writing reusable and readable code and these are some of the tools I've used to acomplish that:</p>",
+    "title": "About",
+    "sectionNumber": "002",
+    "description": "<p>I've been helping small clients, startups and large companies build websites and web applications since 2016. Over these years, I've been fortunate to work alongside amazing people, with whom I have faced many challenges.</p><p>My focus is the development of robust applications by writing reusable, readable and tested code. These are some of the tools I use to accomplish that:</p>",
     "logos": [
       {
-        "title": "React.js",
+        "title": "React.js and Next.js",
         "src": "/img/uploads/react.svg",
         "width": "60",
         "height": "53"
@@ -49,17 +49,22 @@
       "href": "https://www.linkedin.com/in/vinirocha-dev/"
     },
     "achievements": [
-      ["20+<br>Projects"],
-      ["8<br>Companies", "Full-time jobs and freelance clients"],
-      ["6<br>Years xp.", "1st front-end job: 2016"]
+      [
+        "24<br>projects"
+      ],
+      [
+        "9<br>companies",
+        "Full-time jobs and freelance clients"
+      ],
+      [
+        "7<br>years exp.",
+        "1st front-end job: 2016"
+      ]
     ]
   },
-
   "contact": {
-    "title": [
-      "LET'S DO SOMETHING",
-      "GREAT"
-    ],
+    "title": "Contact",
+    "sectionNumber": "003",
     "address": {
       "label": "Get in touch"
     }

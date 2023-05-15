@@ -1,0 +1,87 @@
+{
+  "jobs": [
+    {
+      "company": "Strike",
+      "link": "https://strike.me/",
+      "roles": [
+        {
+          "title": "Senior front-end engineer",
+          "type": "full-time",
+          "period": "Mar 2022 - Jan 2023 · 11 months",
+          "description": "I was part of the commerce squad, where we built things like the Strike API to allow companies to access a global network of customers and business to send and receive instant payments. Some of my activities were:",
+          "image": "",
+          "list": [
+            "Develop front-end features using Next.js, Nx, React Query, ChakraUI, etc.",
+            "Write tests using Jest and Playwright.",
+            "Write documentation with Storybook and Markdown files.",
+            "Demonstrate my work from the previous sprint at Sprint Review meetings.",
+            "Suggest workflow improvements at Team Retrospective meetings. "
+          ]
+        }
+      ]
+    },
+    {
+      "company": "The Nine Level",
+      "link": "https://the9level.com/en-us/",
+      "roles": [
+        {
+          "title": "Team lead",
+          "type": "full-time",
+          "period": "Jun 2020 - Apr 2021 · 11 months",
+          "description": "Still working on the dedicated team for Cielo with front-end, but with additional duties:",
+          "image": "",
+          "list": [
+            "Meetings with Cielo teams (marketing, design, SEO, infra) to discuss future tasks and solve issues.",
+            "Meetings with our product manager and team to estimate and assign new tasks to the more appropriate developer.",
+            "Interview and help onboarding recently hired developers.",
+            "Helping other developers to ensure all tasks were delivered and tested in estimated time."
+          ]
+        },
+        {
+          "title": "Senior front-end developer",
+          "type": "full-time",
+          "period": "Aug 2019 - Jun 2020 · 11 months",
+          "description": "At this agency, I worked on the team responsible for the website and blog of our client Cielo, the biggest payment system company in Latin America by revenue and market value. Some of my responsibilities were:",
+          "image": "",
+          "list": [
+            "Migrate pages from the old framework to Nuxt.js, following the new design system guidelines.",
+            "Develop components and new campaign pages. ",
+            "Refactor, config Webpack and define best practices to improve the developer experience on projects.",
+            "Review pull requests from other developers."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Muuving",
+      "link": "https://www.archademy.com.br/",
+      "roles": [
+        {
+          "title": "Full stack developer",
+          "type": "full-time",
+          "period": "Nov 2017 - Mar 2018 · 5 months",
+          "description": "I kept working at Muuving with front-end, but also started to:",
+          "image": "",
+          "list": [
+            "Develop web APIs using Node.js/Express.js.",
+            "Data storage with Heroku and Sequelize.",
+            "Websites and landing page development."
+          ]
+        },
+        {
+          "title": "Front-end developer",
+          "type": "full-time",
+          "period": "Nov 2015 - Nov 2017 · 2 years 1 month",
+          "description": "Muuving is a Interior Architecture/Urbanism startup. I started there as an intern, but I was rapidly promoted to junior developer to do:",
+          "image": "",
+          "list": [
+            "Web app development with TypeScript and the newly rewritten Angular.",
+            "Website and landing page development.",
+            "Interface prototyping.",
+            "Learn new technologies: HTML, CSS, JS, BEM, RxJs, jQuery, Firebase and so on."
+          ]
+        }
+      ]
+    }
+  ]
+}
