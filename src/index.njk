@@ -74,15 +74,18 @@ eleventyComputed:
       fixed flex flex-col top-24 right-10 lg:static lg:top-auto lg:right-auto lg:mt-16
       md:pr-4 lg:col-start-9 lg:col-end-13 lg:row-start-1 lg:row-end-3
       lg:bg-transparent text-gray-900 text-right
-      transition-opacity pointer-events-none opacity-0 lg:opacity-100 lg:pointer-events-auto z-40
+      transition-opacity opacity-0 lg:opacity-100 z-40
     "
   >
-    <nav class="
-      lg:fixed container lg:left-0 lg:right-0 lg:mx-auto lg:pr-8
-      font-medium leading-10 text-base text-gray-800 lg:text-white lg:leading-6 lg:tracking-wide
-      pointer-events-none
-    ">
-      <ul id="nav-link-list" class="nav-link-list lg:inline-block pointer-events-auto">
+    <nav
+      id="menu-nav"
+      class="
+        lg:fixed container lg:left-0 lg:right-0 lg:mx-auto lg:pr-8
+        font-medium leading-10 text-base text-gray-800 lg:text-white lg:leading-6 lg:tracking-wide
+        pointer-events-none
+      "
+    >
+      <ul id="nav-link-list" class="nav-link-list lg:inline-block lg:pointer-events-auto">
         <li class="mt-1 pt-1"><a class="inline-block" href="#work">Experience</a></li>
         <li class="mt-1 pt-1"><a class="inline-block" href="#about">About</a></li>
         <li class="mt-1 pt-1"><a class="inline-block" href="#contact">Contact</a></li>

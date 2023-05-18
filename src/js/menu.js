@@ -2,6 +2,7 @@ const menuButton = document.getElementById('menu-button')
 const pageOverlay = document.getElementById('overlay')
 const menuUnderlay = document.getElementById('menu-underlay')
 const menu = document.getElementById('menu')
+const menuNav = document.getElementById('menu-nav')
 let isMenuOpen = false
 
 pageOverlay.addEventListener('click', function(event) {
@@ -20,7 +21,7 @@ function toggleMenu() {
   pageOverlay.classList.toggle('opacity-40')
   pageOverlay.classList.toggle('pointer-events-none')
   menu.classList.toggle('opacity-0')
-  menu.classList.toggle('pointer-events-none')
+  menuNav.classList.toggle('pointer-events-none')
 }
 
 export function watchMenuButtonClick() {
