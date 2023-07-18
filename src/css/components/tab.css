@@ -6,7 +6,7 @@
     }
   }
   [role="tab"] {
-    width: 60vw;
+    width: 50vw;
 
     &:focus-visible {
       outline: none;
