@@ -1,16 +1,16 @@
 @layer components {
   [role="tablist"] {
-    padding: 0 23vw;
+    padding: 0 25vw;
     @media screen(md) {
       padding: 0;
     }
   }
   [role="tab"] {
-    width: 50vw;
+    width: 60vw;
 
     &:focus-visible {
       outline: none;
-      & .label {
+      & .company-name {
         outline: 2px dotted theme('colors.green.800');
         outline-offset: 0.35em;
       }
@@ -18,7 +18,6 @@
 
     .dash {
       margin-top: 0.5em;
-      margin-left: 30px;
     }
 
     &::before {
@@ -30,13 +29,19 @@
       height: 11px;
       border: 1px solid theme("colors.green.800");
       border-radius: 50%;
+
+      @media screen(md) {
+        bottom: -12px;
+      }
     }
 
     &[aria-selected="true"] {
-      font-weight: bold;
-      color: theme("colors.green.800");
       &::before {
         background-color: theme("colors.green.800");
+      }
+      & .role-title {
+        font-weight: bold;
+        color: theme("colors.green.800");
       }
       @media screen(md) {
         .dash {
@@ -63,7 +68,7 @@
       &::before {
         content: "";
         position: relative;
-        left: -26px;
+        left: -15px;
       }
 
       &.last::after {
@@ -74,9 +79,9 @@
         content: "";
         position: absolute;
         right: calc(-50% + 5px);
-        top: 16px;
-        bottom: calc(-50% + 34px);
-        left: -21px;
+        top: 22px;
+        bottom: calc(-50% + 44px);
+        left: -10px;
         width: 1px;
         height: auto;
         background-color: theme("colors.green.800");
@@ -98,6 +103,9 @@
         position: absolute;
         left: 0;
         width: 0.75rem;
+      }
+      &::after {
+        bottom: 0;
       }
     }
   }

@@ -129,34 +129,47 @@ eleventyComputed:
         role="tablist"
         aria-labelledby="work-title"
       >
-        {%- for job in shared.experience.jobs  -%}
-          <button
-            role="tab"
-            aria-selected="{{ "true" if loop.first  else "false" }}"
-            id="{{ job.company }}-tab"
-            class="{{ "last " if loop.last }}{{ "first " if loop.first }}
-              relative mb-4 pb-2 md:inline-flex md:mb-0 md:ml-10 md:pb-0 md:h-20 flex-grow-0 flex-shrink-0
-              font-light md:text-left text-gray-400"
-          >
-            <span class="label">{{ job.company }}</span>
-            <span class="dash hidden h-px flex-grow bg-gray-500" role="presentation"></span>
-          </button>
+        {%- for company in shared.experience.companies  -%}
+          {% set outer_loop = loop %}
+          {%- for role in company.roles  -%}
+            <button
+              role="tab"
+              aria-selected="{{ "true" if outer_loop.first and loop.first else "false" }}"
+              id="{{ company.name }}-{{ role.title }}-tab"
+              class="{{ "last " if outer_loop.last and loop.last  }}{{ "first " if outer_loop.first and loop.first }}
+                relative mb-4 pb-4 md:inline-flex md:mb-0 md:ml-6 md:pb-0 md:h-28 flex-grow-0 flex-shrink-0
+                font-light md:text-left text-gray-400"
+            >
+              <span class="inline-flex flex-col justify-end md:justify-start items-center md:items-start md:pr-4" style="flex: 70% 2 1">
+                <span class="role-title font-light md:text-left leading-5 text-gray-400">{{ role.title }}</span>
+                <span class="comapny-name text-sm text-gray-500">{{ company.name }}</span>
+              </span>
+              <span class="dash hidden h-px flex-grow bg-gray-500 flex-shrink-0" role="presentation"  style="flex: 30% 1 0"></span>
+            </button>
+          {%- endfor %}
         {%- endfor %}
       </div>
 
-      <div class="tabpanel-container relative mt-6 md:mt-0 col-span-12 md:col-span-6 md:col-start-6 lg:col-span-7 lg:col-start-5 px-4 md:px-0">
-        {%- for job in shared.experience.jobs -%}
-          <section
-            role="tabpanel"
-            aria-labelledby="{{ job.company }}-tab"
-            class="md:border-l md:border-gray-500 md:pl-12 md:py-8"
-            {% if loop.index0 !== 0 %}hidden{% endif %}
-          >
-            {%- for role in job.roles -%}
-              <section class="{{ "mt-7" if not loop.first }}">
+      <div
+        class="tabpanel-container relative mt-6 md:mt-0 col-span-12 md:col-span-6 md:col-start-6 lg:col-span-7 lg:col-start-5 px-4 md:px-0
+          md:border-l md:border-gray-500"
+      >
+        {%- for company in shared.experience.companies -%}
+          {% set outer_loop = loop %}
+          {%- for role in company.roles  -%}
+            <section
+              role="tabpanel"
+              aria-labelledby="{{ company.name }}-{{ role.title }}-tab"
+              class="md:pl-8 md:py-8"
+              {% if loop.index0 !== 0 or outer_loop.index0 !== 0 %}hidden{% endif %}
+            >
+              <section>
                 <h3 class="text-xl text-gray-300">{{ role.title }}</h3>
-                <time class="text-sm text-gray-500">{{ role.period }}</time>
-                <p class="{{ classes.bodyText }} mt-2 text-gray-400">{{ role.description }}</p>
+                <time class="block text-sm text-gray-500">{{ role.period }}</time>
+                <a href="{{ company.websiteUrl }}" target="_blank" class="text-green-500 text-sm font-medium tracking-wide">
+                  {{ company.websiteUrl }}
+                </a>
+                <p class="{{ classes.bodyText }} mt-5 text-gray-400">{{ role.description }}</p>
                 {% if role.list and role.list.length %}
                   <ul class="{{ classes.bodyText }} decorated-list mt-1 text-gray-400">
                     {%- for roleItem in role.list -%}
@@ -165,8 +178,8 @@ eleventyComputed:
                   </ul>
                 {% endif %}
               </section>
-            {%- endfor %}
-          </section>
+            </section>
+          {%- endfor %}
         {%- endfor %}
       </div>
     </div>
