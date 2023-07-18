@@ -21,6 +21,7 @@ function toggleMenu() {
   pageOverlay.classList.toggle('opacity-40')
   pageOverlay.classList.toggle('pointer-events-none')
   menu.classList.toggle('opacity-0')
+  menu.classList.toggle('pointer-events-none')
   menuNav.classList.toggle('pointer-events-none')
 }
 
