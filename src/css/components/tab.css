@@ -90,7 +90,25 @@
   }
 
   .tabpanel-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    & > * {
+      @media (max-width: theme("screens.md")) {
+        scroll-snap-stop: always;
+        scroll-snap-align: center;
+        max-width: 100vw;
+        min-width: 100vw;
+        display: inline-block;
+      }
+    }
+
     @media screen(md) {
+      display: block;
+      overflow: hidden;
+      scroll-snap-type: none;
+
       &::before,
       &::after,
       .pointer::before {
